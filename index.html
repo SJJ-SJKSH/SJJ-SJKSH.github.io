@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>ECharts</title>
+    <!-- 引入刚刚下载的 ECharts 文件 -->
+    <script src="echarts.js"></script>
+    <script src="js/echarts.min.js"></script>
+  </head>
+  <body>
+    <!-- 为 ECharts 准备一个定义了宽高的 DOM -->
+    <div id="main" style="width: 800px;height: 600px;;position:absolute;left: 250px; background-color: antiquewhite;"></div>
+    <script type="text/javascript">
+      // 基于准备好的dom，初始化echarts实例
+      var myChart = echarts.init(document.getElementById('main'));
+
+      // 指定图表的配置项和数据
+      option = {
+  title: {
+    text: '90后睡眠质量调研'
+  },
+  tooltip: {
+    trigger: 'axis'
+  },
+  legend: {
+    data: ['Email', 'Union Ads', 'Video Ads', 'Direct', 'Search Engine']
+  },
+  grid: {
+    left: '3%',
+    right: '4%',
+    bottom: '3%',
+    containLabel: true
+  },
+  toolbox: {
+    feature: {
+      saveAsImage: {}
+    }
+  },
+  xAxis: {
+    type: 'category',
+    boundaryGap: false,
+    data: ['非常差', '较差', '一般']
+  },
+  yAxis: {},
+  series: [
+    {
+      name: '无脱发',
+      type: 'line',
+      stack: 'Total',
+      data: [8, 78, 254]
+    },
+    {
+      name: '脱发',
+      type: 'line',
+      stack: 'Total',
+      data: [66, 116, 278]
+    } 
+    
+  ]
+};
+      // 使用刚指定的配置项和数据显示图表。
+      myChart.setOption(option);
+    </script>
+  </body>
+</html>
